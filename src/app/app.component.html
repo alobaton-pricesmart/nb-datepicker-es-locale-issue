@@ -1,0 +1,20 @@
+<nb-layout>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-body>
+        NbDatepicker using FormGroup:
+        <form class="form-horizontal" (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="isForm | async as isForm;"
+          autocomplete="false" autocomplete="off" novalidate role="form">
+          <input nbInput fullWidth [nbDatepicker]="datepicker01" formControlName="formControl" [status]="getStatus(form.controls.formControl)" class="form-control">
+          <nb-datepicker #datepicker01 size="medium"></nb-datepicker>
+        </form>
+        NbDatepicker using FormControl:
+        <input nbInput fullWidth [nbDatepicker]="datepicker02" [formControl]="nbDatepickerFormControl" [status]="getStatus(nbDatepickerFormControl)" class="form-control">
+        <nb-datepicker #datepicker02 size="medium"></nb-datepicker>
+        NbRangepicker using FormControl:
+        <input nbInput fullWidth [nbDatepicker]="rangepicker" [formControl]="nbRangepickerFormControl" >
+        <nb-rangepicker #rangepicker size="medium"></nb-rangepicker>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>
